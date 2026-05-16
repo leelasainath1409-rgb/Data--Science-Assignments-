@@ -1,9 +1,13 @@
 import streamlit as st
 import pickle
 import numpy as np
+import os
+
+# Correct model path
+model_path = os.path.join(os.path.dirname(__file__), 'model.pkl')
 
 # Load model
-model = pickle.load(open('model.pkl', 'rb'))
+model = pickle.load(open(model_path, 'rb'))
 
 st.title("Telecom Churn Prediction")
 
